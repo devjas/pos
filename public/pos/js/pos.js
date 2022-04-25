@@ -46,7 +46,7 @@ function toppings() {
 					}
 				}
 			});
-			let filtered = checked_arr.filter((item, index) => checked_arr.indexOf(item) === index); // Removes duplicate from an array
+			checked_arr.filter((item, index) => checked_arr.indexOf(item) === index); // Removes duplicate from an array
 			addon_option_arr.map(ae => ae.classList.remove('show'));
 			addon_option.classList.add('shows');
 		}
