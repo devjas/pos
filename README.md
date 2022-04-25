@@ -1,3 +1,3 @@
-## POS
+## POS System
 
-A POS system for the restaurants to take food orders.
+This POS system is in developement mode and it's not ready to be used yet.
