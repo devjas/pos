@@ -48,30 +48,8 @@ function toppings() {
 			});
 			let filtered = checked_arr.filter((item, index) => checked_arr.indexOf(item) === index); // Removes duplicate from an array
 			addon_option_arr.map(ae => ae.classList.remove('show'));
-			addon_option.classList.add('show');
+			addon_option.classList.add('shows');
 		}
 
 	});
-
-	// topping.forEach((ae, i) => {
-	// 	let add_opt = document.getElementsByClassName('add-opt')[i];
-	// 	let addon_option = document.getElementsByClassName('addon-option')[i];
-	// 	ae.onclick = (e) => {
-	// 		addon_option.classList.add('show');
-	// 		addon_option.querySelectorAll('button').forEach((ab, i) => {
-	// 			ab.onclick = () => {
-	// 				if(ab.value != 0) {
-	// 					add_opt.textContent = " - " + ab.value.toUpperCase();
-	// 					addon_option.classList.remove('show');
-	// 					ae.checked = true;
-	// 				} else {
-	// 					add_opt.textContent = "";
-	// 					addon_option.classList.remove('show');
-	// 					ae.checked = false;
-	// 				}
-	// 			}
-	// 		});
-	// 	}
-	// });
-
 }
