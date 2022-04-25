@@ -1,0 +1,163 @@
+body, html {
+  font-family: 'Roboto';
+  background-color: #E3E7ED; }
+
+.font-weight-100 {
+  font-weight: 100 !important; }
+
+.font-weight-300 {
+  font-weight: 300 !important; }
+
+.font-weight-500 {
+  font-weight: 500 !important; }
+
+.font-weight-900 {
+  font-weight: 900 !important; }
+
+.color-light-two {
+  color: #F3F5F7; }
+
+.color-light-three {
+  color: #E3E7ED; }
+
+.color-green {
+  color: #0CB56E; }
+
+.color-yellow {
+  color: #EDAC39; }
+
+.color-red {
+  color: #D64B5D; }
+
+.color-dark {
+  color: #2C363E; }
+
+.color-blue {
+  color: #0f8df2; }
+
+.pos-bg-light-two {
+  background-color: #F3F5F7; }
+
+.pos-bg-light-three {
+  background-color: #E3E7ED; }
+
+.pos-bg-green {
+  background-color: #0CB56E; }
+
+.pos-bg-yellow {
+  background-color: #EDAC39; }
+
+.pos-bg-red {
+  background-color: #D64B5D; }
+
+.pos-bg-dark {
+  background-color: #2C363E; }
+
+.pos-bg-blue {
+  background-color: #0f8df2; }
+
+.nav-hamburger-icon {
+  position: relative; }
+  .nav-hamburger-icon .nav-icon span {
+    display: block;
+    background: #F3F5F7;
+    height: 4px;
+    width: 40px;
+    margin-bottom: 0.25rem; }
+    .nav-hamburger-icon .nav-icon span:last-of-type {
+      margin-bottom: 0 !important; }
+  .nav-hamburger-icon .nav-icon:hover {
+    cursor: pointer; }
+
+.btn-block-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  gap: 1.25rem;
+  text-align: center; }
+  .btn-block-container.addons-extras .pos-btn-block {
+    position: relative;
+    height: auto; }
+    .btn-block-container.addons-extras .pos-btn-block ul.addon-option {
+      display: none;
+      width: 100%;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 0.50rem;
+      background-color: #ffffff;
+      box-sizing: border-box; }
+      .btn-block-container.addons-extras .pos-btn-block ul.addon-option li {
+        box-sizing: border-box;
+        list-style: none;
+        padding: 0;
+        display: block;
+        width: 100%;
+        margin-bottom: 0.25rem; }
+        .btn-block-container.addons-extras .pos-btn-block ul.addon-option li button {
+          color: #ffffff;
+          width: 100%;
+          padding: 0.50rem;
+          display: block;
+          border: none;
+          background-color: #0f8df2; }
+          .btn-block-container.addons-extras .pos-btn-block ul.addon-option li button:last-of-type {
+            margin-bottom: 0; }
+  .btn-block-container .pos-btn-block {
+    position: relative;
+    user-select: none;
+    height: 85px;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2C363E;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; }
+    .btn-block-container .pos-btn-block:active {
+      background-color: #2C363E;
+      color: #ffffff; }
+    .btn-block-container .pos-btn-block .pos-btn-checkbox {
+      padding-top: .5rem;
+      padding-bottom: .5rem; }
+    .btn-block-container .pos-btn-block input[type="checkbox"], .btn-block-container .pos-btn-block input[type="radio"] {
+      position: absolute;
+      top: .25rem;
+      left: .25rem;
+      z-index: -1; }
+      .btn-block-container .pos-btn-block input[type="checkbox"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox {
+        background-color: #0f8df2;
+        color: #ffffff; }
+
+.current-orders {
+  position: sticky;
+  top: 50px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+  .current-orders .orders-row {
+    height: calc(100vh - 328px);
+    max-height: calc(100vh - 326px);
+    overflow-y: scroll; }
+    .current-orders .orders-row table tbody tr td {
+      vertical-align: middle;
+      font-size: 14px; }
+
+.action-btn-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 0.75rem; }
+  .action-btn-block button.action-btn {
+    display: block;
+    height: 60px;
+    padding-left: 0;
+    padding-right: 0; }
+
+.show {
+  display: block !important; }
+
+/*# sourceMappingURL=pos-style.css.map */
