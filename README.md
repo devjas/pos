@@ -1,3 +1,3 @@
 ## POS
 
-A POS sytem for a restaurant to take orders 
+A POS sytem for a restaurant to take orders.
