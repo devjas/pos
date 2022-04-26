@@ -36,13 +36,12 @@ function toppings() {
 			const isFound = checked_arr.filter(item => t.checked = true);
 			Array.from(addon_extra.querySelectorAll('li button')).map(btn => {
 				btn.onclick = () => {
+					addon_option_arr.map(ae => ae.classList.remove('show'));
 					if(btn.value != 0) {
 						add_opt.textContent = "- " + btn.value.toUpperCase();
-						addon_option_arr.map(ae => ae.classList.remove('show'));
 					} else {
 						add_opt.textContent = '';
 						t.checked = false;
-						addon_option_arr.map(ae => ae.classList.remove('show'));
 					}
 				}
 			});
