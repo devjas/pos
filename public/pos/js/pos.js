@@ -23,20 +23,17 @@ function nav_icon() {
 
 function toppings() {
 	let addon_extra = document.getElementsByClassName('addons-extras')[0];
-	let topping = Array.from(addon_extra.querySelectorAll('.pos-btn-block input[type="checkbox"]'));
-
-	let checked_arr = [];
-	const map_top = topping.map((t, i) => {
+	let topping = addon_extra.querySelectorAll('.pos-btn-block input[type="checkbox"]');
+	const map_top = Array.from(topping).map((t, i) => {
 		let addon_option = document.getElementsByClassName('addon-option')[i];
 		let add_opt = document.getElementsByClassName('add-opt')[i];
-		let addon_option_arr = Array.from(addon_extra.querySelectorAll('label div ul'));
-
+		let addon_option_arr = Array.from(addon_extra.querySelectorAll('label div ul')); 
 		t.onclick = (event) => {
-			checked_arr.push(t.value);
-			const isFound = checked_arr.filter(item => t.checked = true);
+			t.checked = add_opt.textContent ? true : false; // Check only if ADD, EXTRA or SIZE is chosen
 			Array.from(addon_extra.querySelectorAll('li button')).map(btn => {
-				btn.onclick = () => {
+				btn.onclick = (e) => {
 					addon_option_arr.map(ae => ae.classList.remove('show'));
+					t.checked = true;
 					if(btn.value != 0) {
 						add_opt.textContent = "- " + btn.value.toUpperCase();
 					} else {
@@ -45,10 +42,8 @@ function toppings() {
 					}
 				}
 			});
-			checked_arr.filter((item, index) => checked_arr.indexOf(item) === index); // Removes duplicate from an array
 			addon_option_arr.map(ae => ae.classList.remove('show'));
 			addon_option.classList.add('show');
 		}
-
 	});
 }

@@ -14,6 +14,6 @@ use App\Http\Controllers\PosPagesController;
 |
 */
 
-Route::get('/pos-start', [PosPagesController::class, 'getCategories']);
+Route::get('/', [PosPagesController::class, 'getCategories']);
 Route::get('/items', [PosPagesController::class, 'getItems']);
 Route::get('/addons-extras', [PosPagesController::class, 'getAddonsExtras']);

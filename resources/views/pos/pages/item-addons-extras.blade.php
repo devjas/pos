@@ -52,7 +52,7 @@
 							<span class="row h-100 pos-btn-checkbox">
 								<span class="col-12 align-self-center">
 									<p class="mb-0">{{ __('Cucumber') }}</p>
-									<span class="mb-0 fw-normal add-opt"><i></i></span>
+									<span class="mb-0 fw-normal add-opt"></span>
 								</span>
 							</span>
 							<div>
@@ -69,7 +69,7 @@
 							<span class="row h-100 pos-btn-checkbox">
 								<span class="col-12 align-self-center">
 									<p class="mb-0">{{ __('Mayo') }}</p>
-									<span class="mb-0 fw-normal add-opt"><i></i></span>
+									<span class="mb-0 fw-normal add-opt"></span>
 								</span>
 							</span>
 							<div>
