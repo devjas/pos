@@ -33,7 +33,7 @@ function toppings() {
 			Array.from(addon_extra.querySelectorAll('li button')).map(btn => {
 				btn.onclick = (e) => {
 					addon_option_arr.map(ae => ae.classList.remove('show'));
-					t.checked = true;
+					t.checked = true;  
 					if(btn.value != 0) {
 						add_opt.textContent = "- " + btn.value.toUpperCase();
 					} else {

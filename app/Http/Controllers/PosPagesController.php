@@ -15,7 +15,7 @@ class PosPagesController extends Controller
         return View::make('pos.pages.items');
     }
 
-    public function getAddonsExtras() {
+    public function getAddonsExtras(Request $request) {
         return View::make('pos.pages.item-addons-extras');
     }
 }
