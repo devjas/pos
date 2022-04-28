@@ -23,119 +23,19 @@
 						<tr class="bg-white">
 							<td class="pt-3 pb-3">
 								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
+									<p class="mb-0 lh-sm">Cheese Burger</p>
 									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
 								</div>
 							</td>
 							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
-						</tr>
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Club Sandwich with Cheese</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$15.00</p></td>
-							<td class="text-end"><p class="mb-0">$35.00</p></td>
+							<td class="text-end"><p class="mb-0">$5.99</p></td>
+							<td class="text-end"><p class="mb-0">$5.99</p></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
-
 	<div class="row">
 		<div class="col-12 pt-2">
 			<table class="table">
@@ -148,15 +48,15 @@
 					</tr>
 					<tr>
 						<th class="pb-0 pt-0 border-bottom-0"><p class="mb-0 text-secondary">Subtotal:</p></th>
-						<th class="pb-0 pt-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$19.99</p></th>
+						<th class="pb-0 pt-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$0.00</p></th>
 						<th class="pt-0 pb-0 border-bottom-0"><p class="mb-0 color-dark fw-bold">TOTAL:</p></th>
-						<th class="pt-0 pb-0 border-bottom-0 text-end"><h5 class="mb-0 color-dark">$19.99</h5></th>
+						<th class="pt-0 pb-0 border-bottom-0 text-end"><h5 class="mb-0 color-dark">$6.36</h5></th>
 					</tr>
 					<tr>
 						<th class="pt-0 pb-0 border-bottom-0"><p class="mb-0 text-secondary">Tax:</p></th>
-						<th class="pt-0 pb-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$2.75</p></th>
+						<th class="pt-0 pb-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$5.99</p></th>
 						<th class="pt-0 pb-0 border-bottom-0"><p class="mb-0 text-secondary">Balance Due:</p></th>
-						<th class="pt-0 pb-0 border-bottom-0 text-end" ><p class="mb-0 color-red">$19.75</p></th>
+						<th class="pt-0 pb-0 border-bottom-0 text-end" ><p class="mb-0 color-red">$6.36</p></th>
 					</tr>
 				</thead>
 			</table>
