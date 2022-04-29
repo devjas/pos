@@ -11,6 +11,8 @@
 
     @include('pos.includes.topbar')
 
+    @include('pos.includes.offcanvas')
+
     @include('pos.partials._messages')
 
     @yield('content')
