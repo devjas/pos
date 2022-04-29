@@ -29,15 +29,35 @@ body, html {
             margin: {
                 bottom: 0.25rem;
             }
+        
             &:last-of-type {
                 margin: {
                     bottom: 0 !important;
                 }
             }
+            $scale_num: ((0.85, 0.85),(1.10, 1.10),(0.851, 0.851));
+            @each $scales in $scale_num {
+                $i: index($scale_num, $scales);
+                &:nth-child(#{$i}) {
+                    transform: scale($scales);
+                    @include transition(transform .2s ease-in-out .01s);
+                }
+            }
         }
         &:hover {
             cursor: pointer;
-        } 
+        }
+    }
+    
+    &:hover {
+        $scale_num: ((1.001, 1.001),(.9, .9),(1.003, 1.003));
+        @each $scales in $scale_num {
+            $i: index($scale_num, $scales);
+            span:nth-child(#{$i}) {
+                transform: scale($scales);
+                @include transition(transform .2s ease-in-out .01s);
+            }
+        }
     }
 }
 .btn-block-container {

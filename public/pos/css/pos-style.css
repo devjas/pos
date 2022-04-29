@@ -66,8 +66,38 @@ body, html {
     margin-bottom: 0.25rem; }
     .nav-hamburger-icon .nav-icon span:last-of-type {
       margin-bottom: 0 !important; }
+    .nav-hamburger-icon .nav-icon span:nth-child(1) {
+      transform: scale(0.85, 0.85);
+      -moz-transition: transform 0.2s ease-in-out 0.01s;
+      -webkit-transition: transform 0.2s ease-in-out 0.01s;
+      transition: transform 0.2s ease-in-out 0.01s; }
+    .nav-hamburger-icon .nav-icon span:nth-child(2) {
+      transform: scale(1.1, 1.1);
+      -moz-transition: transform 0.2s ease-in-out 0.01s;
+      -webkit-transition: transform 0.2s ease-in-out 0.01s;
+      transition: transform 0.2s ease-in-out 0.01s; }
+    .nav-hamburger-icon .nav-icon span:nth-child(3) {
+      transform: scale(0.851, 0.851);
+      -moz-transition: transform 0.2s ease-in-out 0.01s;
+      -webkit-transition: transform 0.2s ease-in-out 0.01s;
+      transition: transform 0.2s ease-in-out 0.01s; }
   .nav-hamburger-icon .nav-icon:hover {
     cursor: pointer; }
+  .nav-hamburger-icon:hover span:nth-child(1) {
+    transform: scale(1.001, 1.001);
+    -moz-transition: transform 0.2s ease-in-out 0.01s;
+    -webkit-transition: transform 0.2s ease-in-out 0.01s;
+    transition: transform 0.2s ease-in-out 0.01s; }
+  .nav-hamburger-icon:hover span:nth-child(2) {
+    transform: scale(0.9, 0.9);
+    -moz-transition: transform 0.2s ease-in-out 0.01s;
+    -webkit-transition: transform 0.2s ease-in-out 0.01s;
+    transition: transform 0.2s ease-in-out 0.01s; }
+  .nav-hamburger-icon:hover span:nth-child(3) {
+    transform: scale(1.003, 1.003);
+    -moz-transition: transform 0.2s ease-in-out 0.01s;
+    -webkit-transition: transform 0.2s ease-in-out 0.01s;
+    transition: transform 0.2s ease-in-out 0.01s; }
 
 .btn-block-container {
   display: grid;
