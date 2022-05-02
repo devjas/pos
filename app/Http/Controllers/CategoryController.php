@@ -116,7 +116,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         if($category->pos_category == $request->pos_category) {
-            Session::flash('error', $request->pos_category . ' Already exists');
+            Session::flash('error', $request->pos_category . ' already exists');
             return redirect()->back();
         }
 
