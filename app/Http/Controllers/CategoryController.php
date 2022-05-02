@@ -17,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('pos_category')->orderBy('pos_category', 'ASC')->get();
+        $categories = Category::select('id','pos_category')->orderBy('pos_category', 'ASC')->get();
         return View::make('pos.pages.category.index', ['categories' => $categories]);
     }
 
@@ -89,7 +89,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return View::make('pos.pages.category.edit', ['category' => $category]);
     }
 
     /**
@@ -101,7 +102,28 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'pos_category' => 'required|max:30'
+        ], $this->category_rules());
+        
+        if($validator->fails()) {
+
+            Session::flash('error', 'Please fix all required fields');
+            return redirect()->back()->withErrors($validator)->withInput();
+
+        } 
+        
+        $category = Category::find($id);
+
+        if($category->pos_category == $request->pos_category) {
+            Session::flash('error', $request->pos_category . ' Already exists');
+            return redirect()->back();
+        }
+
+        $category->update(['pos_category' => $request->pos_category]);
+   
+        Session::flash('success', 'Category updated successfully!');
+        return redirect()->intended(route('category.index'));
     }
 
     /**
