@@ -49,7 +49,7 @@ class CategoryController extends Controller
 
         $validator = Validator::make($request->all(), [
             'pos_category' => 'required|max:30'
-        ]);
+        ], $this->category_rules());
         
         if($validator->fails()) {
 
