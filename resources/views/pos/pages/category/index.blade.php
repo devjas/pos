@@ -1,0 +1,35 @@
+@extends('pos.pos-tpl')
+@section('title') My Categories @endsection
+
+@section('content')
+<div class="container-fluid pt-4 pb-4">
+	<div class="row justify-content-between">
+		<div class="col-auto align-self-center"><h4 class="mb-0">My Categories</h4></div>
+		<div class="col-auto align-self-center">
+			<a href="{{ route('category.create') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-plus"></i> Add New Category</a>
+		</div>
+	</div>
+	<hr class="mt-1">
+	<div class="row">
+		<div class="col-12 col-md-12 col-lg-8">
+			<div class="card card-body rounded-0 border-0 shadow">
+				<ul class="list-group list-group-flush">
+					@foreach($categories as $category)
+					  <li class="list-group-item ps-0 pe-0 pt-1 pb-1">
+					  	<div class="row justify-content-between">
+					  		<div class="col-auto"><a href="#">{{ $category->pos_category }}</a></div>
+					  		<div class="col-auto">
+					  			<a href="#">
+					  				<i class="fas fa-pen color-blue me-3" title="Edit this category"></i>
+					  				<i class="fas fa-trash color-red" title="Delete this category"></i>
+					  			</a>
+					  		</div>
+					  	</div>
+					  </li>
+					@endforeach
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+@endsection

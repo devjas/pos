@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Models\Category;
 
 class PosPagesController extends Controller
 {
     public function getCategories() {
-        return View::make('pos.pages.categories');
+        $categories = Category::select('pos_category')->orderBy('pos_category', 'ASC')->get();
+        return View::make('pos.pages.categories', ['categories' => $categories]);
     }
 
     public function getItems() {

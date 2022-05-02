@@ -1,27 +1,6 @@
-$vendor_prefixes: ('-moz-', '-webkit-');
 @mixin textselect($val) {
 	@each $prefix in $vendor_prefixes {
         #{$prefix}user-select: $val;
     }
     user-select: $val;
-}
-@mixin bg-transition($transition, $bg, $color) {
-	background-color: $bg;
-	color: $color;
-	@each $prefix in $vendor_prefixes {
-		#{$prefix}transition: background $transition;
-	}
-	transition: background $transition;
-}
-@mixin add-shadow($shadow) {
-	@each $prefix in $vendor_prefixes {
-		#{$prefix}box-shadow: $shadow;
-	}
-	box-shadow: $shadow;
-}
-@mixin transition($transition) {
-	@each $prefix in $vendor_prefixes {
-		#{$prefix}transition: $transition;
-	}
-	transition: $transition;
 }

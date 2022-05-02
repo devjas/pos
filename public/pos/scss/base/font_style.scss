@@ -1,0 +1,10 @@
+@each $weight in $weights {
+	.font-weight-#{$weight} {
+		font-weight: #{$weight} !important;
+	}
+}
+@each $color, $color_option in $colors {
+    .color-#{$color} {
+        color: #{$color_option};
+    }
+}

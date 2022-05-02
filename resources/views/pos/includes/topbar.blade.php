@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="col-auto align-self-center">
-			<p class="mb-0 text-white"><i></i></p>
+			<p class="mb-0 text-white fw-normal"></p>
 		</div>
 	</div>
 </div>

@@ -2,6 +2,30 @@ body, html {
   font-family: 'Roboto';
   background-color: #E3E7ED; }
 
+.show {
+  display: block !important; }
+
+.pos-bg-light-two {
+  background-color: #F3F5F7; }
+
+.pos-bg-light-three {
+  background-color: #E3E7ED; }
+
+.pos-bg-green {
+  background-color: #0CB56E; }
+
+.pos-bg-yellow {
+  background-color: #EDAC39; }
+
+.pos-bg-red {
+  background-color: #D64B5D; }
+
+.pos-bg-dark {
+  background-color: #2C363E; }
+
+.pos-bg-blue {
+  background-color: #0f8df2; }
+
 .font-weight-100 {
   font-weight: 100 !important; }
 
@@ -35,27 +59,6 @@ body, html {
 .color-blue {
   color: #0f8df2; }
 
-.pos-bg-light-two {
-  background-color: #F3F5F7; }
-
-.pos-bg-light-three {
-  background-color: #E3E7ED; }
-
-.pos-bg-green {
-  background-color: #0CB56E; }
-
-.pos-bg-yellow {
-  background-color: #EDAC39; }
-
-.pos-bg-red {
-  background-color: #D64B5D; }
-
-.pos-bg-dark {
-  background-color: #2C363E; }
-
-.pos-bg-blue {
-  background-color: #0f8df2; }
-
 .nav-hamburger-icon {
   position: relative; }
   .nav-hamburger-icon .nav-icon span {
@@ -67,16 +70,22 @@ body, html {
     .nav-hamburger-icon .nav-icon span:last-of-type {
       margin-bottom: 0 !important; }
     .nav-hamburger-icon .nav-icon span:nth-child(1) {
+      -moz-transform: scale(0.85, 0.85);
+      -webkit-transform: scale(0.85, 0.85);
       transform: scale(0.85, 0.85);
       -moz-transition: transform 0.2s ease-in-out 0.01s;
       -webkit-transition: transform 0.2s ease-in-out 0.01s;
       transition: transform 0.2s ease-in-out 0.01s; }
     .nav-hamburger-icon .nav-icon span:nth-child(2) {
+      -moz-transform: scale(1.1, 1.1);
+      -webkit-transform: scale(1.1, 1.1);
       transform: scale(1.1, 1.1);
       -moz-transition: transform 0.2s ease-in-out 0.01s;
       -webkit-transition: transform 0.2s ease-in-out 0.01s;
       transition: transform 0.2s ease-in-out 0.01s; }
     .nav-hamburger-icon .nav-icon span:nth-child(3) {
+      -moz-transform: scale(0.851, 0.851);
+      -webkit-transform: scale(0.851, 0.851);
       transform: scale(0.851, 0.851);
       -moz-transition: transform 0.2s ease-in-out 0.01s;
       -webkit-transition: transform 0.2s ease-in-out 0.01s;
@@ -84,20 +93,40 @@ body, html {
   .nav-hamburger-icon .nav-icon:hover {
     cursor: pointer; }
   .nav-hamburger-icon:hover span:nth-child(1) {
+    -moz-transform: scale(1.001, 1.001);
+    -webkit-transform: scale(1.001, 1.001);
     transform: scale(1.001, 1.001);
     -moz-transition: transform 0.2s ease-in-out 0.01s;
     -webkit-transition: transform 0.2s ease-in-out 0.01s;
     transition: transform 0.2s ease-in-out 0.01s; }
   .nav-hamburger-icon:hover span:nth-child(2) {
+    -moz-transform: scale(0.9, 0.9);
+    -webkit-transform: scale(0.9, 0.9);
     transform: scale(0.9, 0.9);
     -moz-transition: transform 0.2s ease-in-out 0.01s;
     -webkit-transition: transform 0.2s ease-in-out 0.01s;
     transition: transform 0.2s ease-in-out 0.01s; }
   .nav-hamburger-icon:hover span:nth-child(3) {
+    -moz-transform: scale(1.003, 1.003);
+    -webkit-transform: scale(1.003, 1.003);
     transform: scale(1.003, 1.003);
     -moz-transition: transform 0.2s ease-in-out 0.01s;
     -webkit-transition: transform 0.2s ease-in-out 0.01s;
     transition: transform 0.2s ease-in-out 0.01s; }
+
+.current-orders {
+  position: sticky;
+  top: 50px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+  .current-orders .orders-row {
+    height: calc(100vh - 328px);
+    max-height: calc(100vh - 326px);
+    overflow-y: scroll; }
+    .current-orders .orders-row table tbody tr td {
+      vertical-align: middle;
+      font-size: 14px; }
 
 .btn-block-container {
   display: grid;
@@ -163,20 +192,6 @@ body, html {
         background-color: #0f8df2;
         color: #ffffff; }
 
-.current-orders {
-  position: sticky;
-  top: 50px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none; }
-  .current-orders .orders-row {
-    height: calc(100vh - 328px);
-    max-height: calc(100vh - 326px);
-    overflow-y: scroll; }
-    .current-orders .orders-row table tbody tr td {
-      vertical-align: middle;
-      font-size: 14px; }
-
 .action-btn-block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
@@ -187,7 +202,10 @@ body, html {
     padding-left: 0;
     padding-right: 0; }
 
-.show {
-  display: block !important; }
+ul li a {
+  color: #0f8df2;
+  text-decoration: none; }
+ul li:hover a {
+  color: #D64B5D !important; }
 
 /*# sourceMappingURL=pos-style.css.map */

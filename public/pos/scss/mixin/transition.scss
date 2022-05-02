@@ -1,0 +1,6 @@
+@mixin transition($transition) {
+	@each $prefix in $vendor_prefixes {
+		#{$prefix}transition: $transition;
+	}
+	transition: $transition;
+}

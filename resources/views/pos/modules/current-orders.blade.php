@@ -48,13 +48,13 @@
 					</tr>
 					<tr>
 						<th class="pb-0 pt-0 border-bottom-0"><p class="mb-0 text-secondary">Subtotal:</p></th>
-						<th class="pb-0 pt-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$0.00</p></th>
+						<th class="pb-0 pt-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$5.99</p></th>
 						<th class="pt-0 pb-0 border-bottom-0"><p class="mb-0 color-dark fw-bold">TOTAL:</p></th>
 						<th class="pt-0 pb-0 border-bottom-0 text-end"><h5 class="mb-0 color-dark">$6.36</h5></th>
 					</tr>
 					<tr>
 						<th class="pt-0 pb-0 border-bottom-0"><p class="mb-0 text-secondary">Tax:</p></th>
-						<th class="pt-0 pb-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$5.99</p></th>
+						<th class="pt-0 pb-0 border-bottom-0 text-end pe-5"><p class="mb-0 text-secondary fw-normal">$0.37</p></th>
 						<th class="pt-0 pb-0 border-bottom-0"><p class="mb-0 text-secondary">Balance Due:</p></th>
 						<th class="pt-0 pb-0 border-bottom-0 text-end" ><p class="mb-0 color-red">$6.36</p></th>
 					</tr>

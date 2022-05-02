@@ -1,0 +1,14 @@
+ul {
+	li {
+		a {
+			color: $pos-blue;
+			text-decoration: none;
+
+		}
+		&:hover {
+			a {
+				color: $pos-red !important;
+			 }
+		} 
+	}
+}

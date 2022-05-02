@@ -1,0 +1,5 @@
+@each $color, $color_option in $colors {
+    .pos-bg-#{$color} {
+        background-color: #{$color_option};
+    }
+}

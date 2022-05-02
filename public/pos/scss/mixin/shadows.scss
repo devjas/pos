@@ -1,0 +1,6 @@
+@mixin add-shadow($shadow) {
+	@each $prefix in $vendor_prefixes {
+		#{$prefix}box-shadow: $shadow;
+	}
+	box-shadow: $shadow;
+}

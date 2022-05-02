@@ -1,0 +1,28 @@
+.nav-hamburger-icon {
+    position: relative;
+    .nav-icon {
+        span {
+            display: block;
+            background: $light_two;
+            height: 4px;
+            width: 40px;
+            margin: {
+                bottom: 0.25rem;
+            }
+        
+            &:last-of-type {
+                margin: {
+                    bottom: 0 !important;
+                }
+            }
+            @include spanScaleOut;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    &:hover {
+        @include spanScaleIn;
+    }
+}

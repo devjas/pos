@@ -1,0 +1,32 @@
+@mixin bg-transition($transition, $bg, $color) {
+	background-color: $bg;
+	color: $color;
+	@each $prefix in $vendor_prefixes {
+		#{$prefix}transition: background $transition;
+	}
+	transition: background $transition;
+}
+@mixin transform($transform) {
+	@each $prefix in $vendor_prefixes {
+		#{$prefix}transform: $transform;
+	}
+	transform: $transform;
+}
+@mixin spanScaleIn() {
+	@each $scales in $span_scale_in {
+        $i: index($span_scale_in, $scales);
+        span:nth-child(#{$i}) {
+            @include transform(scale($scales));
+            @include transition(transform .2s ease-in-out .01s);
+        }
+    }
+}
+@mixin spanScaleOut() {
+	@each $scales in $span_scale_out {
+        $i: index($span_scale_out, $scales);
+        &:nth-child(#{$i}) {
+            @include transform(scale($scales));
+            @include transition(transform .2s ease-in-out .01s);
+        }
+    }
+}
