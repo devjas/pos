@@ -127,7 +127,7 @@ class CategoryController extends Controller
 
         $category->update(['pos_category' => $request->pos_category]);
         
-        Session::flash('success', $old_category . ' category has been chaged to ' . $request->pos_category);
+        Session::flash('success', $old_category . ' category has been changed to ' . $request->pos_category);
         return redirect()->intended(route('category.edit', $id));
 
     }
