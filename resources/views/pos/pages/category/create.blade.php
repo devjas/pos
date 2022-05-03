@@ -3,18 +3,18 @@
 
 @section('content')
 <div class="container-fluid pt-3 pb-4">
-	<div class="row justify-content-between">
+	<div class="row">
 		<div class="col-auto"><h4 class="mb-0">Add New Category</h4></div>
 		<div class="col-auto align-self-center">
-			<a href="{{ route('category.index') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-list"></i> My Categories</a>
+			<a href="{{ route('category.index') }}" class="btn pos-bg-dark btn-sm text-white">My Categories</a>
 		</div>
 	</div>
 	<hr class="mt-1">
 	<div class="row">
-		<div class="col-12 col-md-12 col-lg-8">
+		<div class="col-12 col-md-12 col-lg-7">
 			<div class="card card-body rounded-0 border-0 shadow p-4">
 				<div class="row">
-					<div class="col-12 col-md-8 col-lg-6">
+					<div class="col-12 col-md-8 col-lg-8">
 						<form action="{{ route('category.store') }}" method="post">
 							@csrf
 							<div class="row mb-3">
