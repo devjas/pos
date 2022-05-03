@@ -1,0 +1,43 @@
+.check-btn {
+	label {
+		position: relative;
+		input[type="checkbox"] {
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			z-index: -1;
+			&:checked {
+				&+ .check-btn-span {
+					background-color: $pos-green;
+					color: $white;
+					&.unpublish {
+						background-color: $pos-red;
+					}
+				}
+			}
+		}
+		input[type="radio"] {
+			@extend input[type="checkbox"];
+		}
+		.check-btn-span {
+			display: block;
+			justify-content: center;
+			background-color: $pos-dark;
+			color: $white;
+			border-radius: 0.25rem;
+			span {
+				@include textselect(none);
+				width: auto;
+				padding: {
+					left: 0.75rem;
+					right: 0.75rem;
+					top: 0.30rem;
+					bottom: 0.25rem;
+				}
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
