@@ -14,7 +14,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'pos_category' => $this->faker->word
+            'pos_category' => $this->faker->word,
+            'is_visible' => 1
         ];
     }
 }
