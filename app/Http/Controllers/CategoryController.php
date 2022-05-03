@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 use App\Models\Category;
 
 class CategoryController extends Controller
@@ -53,20 +54,20 @@ class CategoryController extends Controller
         
         if($validator->fails()) {
 
-            Session::flash('error', 'Please fix all required fields');
+            Session::flash('error', 'Please fix the following errors.');
             return redirect()->back()->withErrors($validator)->withInput();
 
         } else if(Category::where('pos_category', $request->pos_category)->exists()) {
 
-            Session::flash('error', 'Provided category already exists');
+            Session::flash('error', $request->pos_category . ' category already exists');
             return redirect()->back()->withErrors($validator)->withInput();
 
         }
-        
+     
         Category::create($validator->validated());
 
-        Session::flash('success', 'Category saved successfully!');
-        return redirect()->intended(route('category.index'));
+        Session::flash('success', $request->pos_category . " category saved successfully!");
+        return redirect()->intended(route('category.create'));
 
     }
 
@@ -102,28 +103,33 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             'pos_category' => 'required|max:30'
         ], $this->category_rules());
         
         if($validator->fails()) {
 
-            Session::flash('error', 'Please fix all required fields');
+            Session::flash('error', 'Please fix the following errors.');
             return redirect()->back()->withErrors($validator)->withInput();
 
         } 
         
         $category = Category::find($id);
+        $old_category = $category->getOriginal('pos_category'); // Remembering old category
 
-        if($category->pos_category == $request->pos_category) {
-            Session::flash('error', $request->pos_category . ' already exists');
-            return redirect()->back();
+        if($category->where('pos_category', $request->pos_category)->exists()) {
+
+            Session::flash('error', $request->pos_category . ' category already exists.');
+            return redirect()->back()->withInput();
+
         }
 
         $category->update(['pos_category' => $request->pos_category]);
-   
-        Session::flash('success', 'Category updated successfully!');
-        return redirect()->intended(route('category.index'));
+        
+        Session::flash('success', $old_category . ' category has been chaged to ' . $request->pos_category);
+        return redirect()->intended(route('category.edit', $id));
+
     }
 
     /**
