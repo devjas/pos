@@ -15,7 +15,7 @@ class CategoryTest extends TestCase
      *
      * @return void
      */
-    public function test_category_index()
+    public function test_category_index_exists()
     {
         $response = $this->get(route('category.index'));
 
@@ -28,7 +28,30 @@ class CategoryTest extends TestCase
             'pos_category' => $this->faker->word,
         ]);
 
-        $response->assertRedirect(route('category.index'));
+        $response->assertRedirect(route('category.create'));
 
     }
+
+    public function test_can_update_categories() {
+
+        $category = Category::factory()->create(['pos_category' => 'Fries']);
+
+        $response = $this->put(route('category.update', $category->id), [
+            'pos_category' => $this->faker->word,
+        ]);
+
+        $response->assertStatus(302);
+
+        $response->assertRedirect(route('category.edit', $category->id));
+
+    }
+
+    public function test_category_exists_in_database() {
+
+        $category = Category::factory()->create();
+
+        $this->assertModelExists($category);
+
+    }
+
 }
