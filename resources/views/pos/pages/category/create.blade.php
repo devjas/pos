@@ -2,11 +2,11 @@
 @section('title') Create New Category @endsection
 
 @section('content')
-<div class="container-fluid pt-4 pb-4">
+<div class="container-fluid pt-3 pb-4">
 	<div class="row justify-content-between">
 		<div class="col-auto"><h4 class="mb-0">Add New Category</h4></div>
 		<div class="col-auto align-self-center">
-			<a href="{{ route('category.index') }}" class="btn pos-bg-red btn-sm text-white"><i class="fas fa-list"></i> My Categories</a>
+			<a href="{{ route('category.index') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-list"></i> My Categories</a>
 		</div>
 	</div>
 	<hr class="mt-1">
@@ -28,7 +28,8 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<button type="submit" class="btn btn-lg pos-bg-green text-white">Add Category</button>
+									<button type="submit" class="btn btn-md pos-bg-green text-white">Add Category</button> | 
+									<a href="{{ route('category.index') }}" class="btn btn-md pos-bg-red text-white">Exit</a>
 								</div>
 							</div>
 						</form>	
