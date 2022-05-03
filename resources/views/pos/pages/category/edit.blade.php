@@ -27,6 +27,23 @@
 									@endif	
 								</div>
 							</div>
+							<div class="row mb-4">
+								<div class="col-12">
+									<div class="check-btn">
+										<label>
+											<input type="radio" name="is_visible" value="1" {{ $category->is_visible == 1 ? 'checked' : '' }}>
+											<span class="check-btn-span"><span>Visible</span></span>
+										</label>
+										<label>
+											<input type="radio" name="is_visible" value="0" {{ $category->is_visible == 0 ? 'checked' : '' }}>
+											<span class="check-btn-span unpublish"><span>Invisible</span></span>
+										</label>
+									</div>
+									@if($errors->has('is_visible'))
+										<span class="color-red fw-bold">{{ $errors->first('is_visible') }}</span>
+									@endif
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-12">
 									<button type="submit" class="btn btn-md pos-bg-green text-white">Update Category</button>

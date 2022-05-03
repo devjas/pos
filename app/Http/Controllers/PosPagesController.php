@@ -9,7 +9,10 @@ use App\Models\Category;
 class PosPagesController extends Controller
 {
     public function getCategories() {
-        $categories = Category::select('pos_category')->orderBy('pos_category', 'ASC')->get();
+        $categories = Category::select('pos_category')
+        ->where('is_visible', '>', 0)
+        ->orderBy('pos_category', 'ASC')
+        ->get();
         return View::make('pos.pages.categories', ['categories' => $categories]);
     }
 

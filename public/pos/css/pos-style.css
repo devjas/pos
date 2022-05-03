@@ -183,12 +183,12 @@ body, html {
     .btn-block-container .pos-btn-block .pos-btn-checkbox {
       padding-top: .5rem;
       padding-bottom: .5rem; }
-    .btn-block-container .pos-btn-block input[type="checkbox"], .btn-block-container .pos-btn-block input[type="radio"] {
+    .btn-block-container .pos-btn-block input[type="checkbox"], .btn-block-container .pos-btn-block .check-btn label input[type="radio"], .check-btn label .btn-block-container .pos-btn-block input[type="radio"], .btn-block-container .pos-btn-block input[type="radio"] {
       position: absolute;
       top: .25rem;
       left: .25rem;
       z-index: -1; }
-      .btn-block-container .pos-btn-block input[type="checkbox"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox {
+      .btn-block-container .pos-btn-block input[type="checkbox"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block .check-btn label input[type="radio"]:checked + .pos-btn-checkbox, .check-btn label .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox {
         background-color: #0f8df2;
         color: #ffffff; }
 
@@ -207,5 +207,35 @@ ul li a {
   text-decoration: none; }
 ul li:hover a {
   color: #D64B5D !important; }
+
+.check-btn label {
+  position: relative; }
+  .check-btn label input[type="checkbox"], .check-btn label input[type="radio"] {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1; }
+    .check-btn label input[type="checkbox"]:checked + .check-btn-span, .check-btn label input[type="radio"]:checked + .check-btn-span {
+      background-color: #0CB56E;
+      color: #ffffff; }
+      .check-btn label input[type="checkbox"]:checked + .check-btn-span.unpublish, .check-btn label input[type="radio"]:checked + .check-btn-span.unpublish {
+        background-color: #D64B5D; }
+  .check-btn label .check-btn-span {
+    display: block;
+    justify-content: center;
+    background-color: #2C363E;
+    color: #ffffff;
+    border-radius: 0.25rem; }
+    .check-btn label .check-btn-span span {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      width: auto;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      padding-top: 0.30rem;
+      padding-bottom: 0.25rem; }
+    .check-btn label .check-btn-span:hover {
+      cursor: pointer; }
 
 /*# sourceMappingURL=pos-style.css.map */

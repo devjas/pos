@@ -13,5 +13,5 @@ class Category extends Model
        return $this->attributes['pos_category'] = ucfirst($value);
     }
 
-    protected $fillable = ['pos_category'];
+    protected $fillable = ['pos_category', 'is_visible'];
 }

@@ -17,8 +17,8 @@
         <div class="accordion-body">
           <ul class="list-group list-group-flush">
             <li class="list-group-item ps-0 pe-0"><a href="{{ route('category.index') }}" class="stretched-link">Categories</a></li>
-            <!-- <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Items</a></li>
-            <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Addons</a></li>
+            <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Items</a></li>
+            <!-- <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Addons</a></li>
             <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Extras</a></li>
             <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Options</a></li> -->
           </ul>
