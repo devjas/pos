@@ -26,6 +26,7 @@ class CategoryTest extends TestCase
 
         $response = $this->post(route('category.store'), [
             'pos_category' => $this->faker->word,
+            'is_visible' => 1
         ]);
 
         $response->assertRedirect(route('category.create'));
@@ -34,10 +35,11 @@ class CategoryTest extends TestCase
 
     public function test_can_update_categories() {
 
-        $category = Category::factory()->create(['pos_category' => 'Fries']);
+        $category = Category::factory()->create(['pos_category' => 'Fries', 'is_visible' => 1]);
 
         $response = $this->put(route('category.update', $category->id), [
             'pos_category' => $this->faker->word,
+            'is_visible' => 1
         ]);
 
         $response->assertStatus(302);
