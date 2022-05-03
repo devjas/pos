@@ -35,7 +35,8 @@ class CategoryController extends Controller
     public function category_rules() {
         return [
             'pos_category.required' => 'Category name is required',
-            'pos_category.max' => 'Only 30 characters allowed'
+            'pos_category.max' => 'Only 30 characters allowed',
+            'is_visible.required' => 'Choose Visible or Invisible'
         ];
     }
 
@@ -49,7 +50,8 @@ class CategoryController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'pos_category' => 'required|max:30'
+            'pos_category' => 'required|max:30',
+            'is_visible' => 'required'
         ], $this->category_rules());
         
         if($validator->fails()) {
@@ -59,14 +61,14 @@ class CategoryController extends Controller
 
         } else if(Category::where('pos_category', $request->pos_category)->exists()) {
 
-            Session::flash('error', $request->pos_category . ' category already exists');
+            Session::flash('error', ucfirst($request->pos_category) . ' category already exists');
             return redirect()->back()->withErrors($validator)->withInput();
 
         }
      
         Category::create($validator->validated());
 
-        Session::flash('success', $request->pos_category . " category saved successfully!");
+        Session::flash('success', ucfirst($request->pos_category) . " category saved successfully.");
         return redirect()->intended(route('category.create'));
 
     }
@@ -105,7 +107,8 @@ class CategoryController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'pos_category' => 'required|max:30'
+            'pos_category' => 'required|max:30',
+            'is_visible' => 'required'
         ], $this->category_rules());
         
         if($validator->fails()) {
@@ -116,18 +119,31 @@ class CategoryController extends Controller
         } 
         
         $category = Category::find($id);
-        $old_category = $category->getOriginal('pos_category'); // Remembering old category
 
-        if($category->where('pos_category', $request->pos_category)->exists()) {
+        $category->pos_category = $request->pos_category;
+        $category->is_visible = $request->is_visible;
 
-            Session::flash('error', $request->pos_category . ' category already exists.');
+        $old_category = $category->getOriginal('pos_category');
+        $new_category = ucfirst($request->pos_category);
+        $visibility = $request->is_visible == 1 ? 'visible' : 'Invisible'; 
+
+        if(!$category->isDirty('pos_category')) {
+
+            Session::flash('success', 'Category is ' . $visibility);
+
+        } else if($category->where('pos_category', $new_category)->exists()) {
+
+            Session::flash('error', $new_category . ' category already exists.');
             return redirect()->back()->withInput();
+
+        } else {
+
+            Session::flash('success', $old_category . ' category has been changed to ' . $new_category);
 
         }
 
-        $category->update(['pos_category' => $request->pos_category]);
+        $category->save();
         
-        Session::flash('success', $old_category . ' category has been changed to ' . $request->pos_category);
         return redirect()->intended(route('category.edit', $id));
 
     }
