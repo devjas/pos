@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container-fluid pt-3 pb-4">
-	<div class="row justify-content-between">
+	<div class="row">
 		<div class="col-auto align-self-center"><h4 class="mb-0">My Categories</h4></div>
 		<div class="col-auto align-self-center">
 			<a href="{{ route('category.create') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-plus"></i> Add New Category</a>
@@ -11,7 +11,7 @@
 	</div>
 	<hr class="mt-1">
 	<div class="row">
-		<div class="col-12 col-md-12 col-lg-8">
+		<div class="col-12 col-md-12 col-lg-7">
 			<div class="card rounded-0 border-0 shadow">
 				<div class="card-body">
 					<ul class="list-group list-group-flush">
