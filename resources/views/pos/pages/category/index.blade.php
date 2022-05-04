@@ -22,7 +22,10 @@
 						  			<a href="{{ route('category.edit', $category->id) }}">{{ $category->pos_category }}</a>
 						  		</div>
 						  		<div class="col-auto">
-						  			<a href="{{ route('category.edit', $category->id) }}"><i class="fas fa-pen color-blue me-3" title="Edit this category"></i></a>
+						  			<span class="badge fw-normal pos-bg-{{ $category->is_visible > 0 ? "green" : "red" }}">
+						  				{{ $category->is_visible > 0 ? "Visible" : "Invisible" }}
+						  			</span>
+						  			<a href="{{ route('category.edit', $category->id) }}"><i class="fas fa-pen color-blue ms-3 me-3" title="Edit this category"></i></a>
 						  			<a href="#"><i class="fas fa-trash color-red" title="Delete this category"></i></a>
 						  		</div>
 						  	</div>
