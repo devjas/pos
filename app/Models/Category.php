@@ -13,5 +13,9 @@ class Category extends Model
        return $this->attributes['pos_category'] = ucfirst($value);
     }
 
+    public function items() {
+        return $this->belongsToMany(Item::class, 'items_categories', 'category_id');
+    }
+
     protected $fillable = ['pos_category', 'is_visible'];
 }
