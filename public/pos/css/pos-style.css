@@ -202,11 +202,11 @@ body, html {
     padding-left: 0;
     padding-right: 0; }
 
-ul li a {
+a {
   color: #0f8df2;
   text-decoration: none; }
-ul li:hover a {
-  color: #D64B5D !important; }
+  a:hover {
+    color: #D64B5D; }
 
 .check-btn label {
   position: relative; }
