@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('id','pos_category', 'is_visible')->orderBy('pos_category', 'ASC')->get();
+        $categories = Category::select('id', 'pos_category', 'is_visible')->orderBy('pos_category', 'ASC')->get();
         return View::make('pos.pages.category.index', ['categories' => $categories]);
     }
 
