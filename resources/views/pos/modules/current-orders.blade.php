@@ -9,7 +9,7 @@
 	</div>
 	<div class="card card-body h-100 rounded-0 p-0">
 		<div class="row orders-row">
-			<div class="col-12">
+			<div class="col-12 pe-0">
 				<table class="table mb-0">
 					<thead class="sticky-top">
 						<tr class="pos-bg-dark">

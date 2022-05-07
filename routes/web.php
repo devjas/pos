@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PosPagesController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PosOrderingController;
 
 /*
@@ -17,8 +18,9 @@ use App\Http\Controllers\PosOrderingController;
 */
 
 Route::get('/', [PosPagesController::class, 'getCategories']);
-Route::get('/items', [PosPagesController::class, 'getItems']);
+Route::get('/items/{id}', [PosPagesController::class, 'getItems']);
 Route::get('/addons-extras', [PosPagesController::class, 'getAddonsExtras']);
 
 Route::resource('category', CategoryController::class);
+Route::resource('item', ItemController::class);
 Route::resource('order', PosOrderingController::class);
