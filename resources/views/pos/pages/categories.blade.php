@@ -11,7 +11,7 @@
 			@else 
 			<div class="btn-block-container categories">
 				@foreach($categories as $category)
-					<a href="/items" class="pos-btn-block shadow-sm">
+					<a href="/items/{{ $category->id }}" class="pos-btn-block shadow-sm">
 						<span class="row h-100"><span class="col-12 align-self-center">{{ $category->pos_category }}</span></span>
 					</a>
 				@endforeach
