@@ -75,7 +75,7 @@
 												@endif	
 											</div>
 											<div class="col-12 col-sm-3 mb-2 mb-lg-0">
-												<label for="item_per">PER</label>
+												<label for="item_per">ITEM PER</label>
 												<select name="item_per" class="form-select border-secondary">
 													<option value="0">Choose</option>
 													<option value="1" {{ old('item_per') == 1  ? "selected" : null }}>Each</option>
