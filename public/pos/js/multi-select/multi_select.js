@@ -28,25 +28,16 @@ const multi_select_option = () => {
 
 	let selected_array = [];
 
-	option_array.map((o, i) => {
+	// Keeps categories selected when item is updating.
+	option_array.map((o, i) => { o.hasAttribute('selected') ? selected_array.push(o.textContent) : null });
 
-		if(o.hasAttribute('selected')) {
-
-			selected_array.push(o.textContent);
-
-			btn.textContent = selected_array;
-
-		} else {
-
-			btn.textContent = 'Nothing is selected';
-
-		}
-
-	});
+	console.log(selected_array);
 
 	const a = li_elements.map((l, i) => {
 
 		if(selected_array.includes(l.textContent)) {
+
+			btn.textContent = selected_array;
 
 			l.classList.add('highlighted');
 
