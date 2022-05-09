@@ -16,4 +16,15 @@ class Item extends Model
     public function getItemPerAttribute($value) {
         return ucfirst($value);
     }
+
+    protected $fillable = [
+        'item_name',
+        'item_description',
+        'item_price',
+        'item_per',
+        'item_tax',
+        'is_special_item',
+        'is_visible'
+    ];
+
 }
