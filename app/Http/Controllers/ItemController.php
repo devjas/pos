@@ -136,6 +136,7 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             'item_category' => 'required|not_in:0',
             'item_name' => 'required|max:30',
@@ -179,7 +180,6 @@ class ItemController extends Controller
         }
 
         ItemsCategory::where('item_id', $id)->whereNotIn('category_id', $request->item_category)->delete();
-
 
         Session::flash('success', 'Item added successfully!');
         return redirect()->route('item.index');
