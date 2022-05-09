@@ -35,9 +35,9 @@
 										@foreach($items as $item)
 											<tr>
 												<td>
-												 	<p class="mb-0 lh-sm text-truncate"><a href="#">{{ $item->item_name }}</a></p>
+												 	<p class="mb-0 lh-sm text-truncate"><a href="{{ route('item.edit', $item->id) }}">{{ $item->item_name }}</a></p>
 												</td>
-												<td><p class="mb-0 lh-sm color-dark">{{ number_format($item->item_price, 2) }}/<small>{{ $item->item_per }}</small></p></td>
+												<td><p class="mb-0 lh-sm color-dark">{{ number_format($item->item_price, 2) }}/<small>@if($item->item_per == 1) Each @elseif($item->item_per == 2) LB @elseif($item->item_per == 3) Dozen @elseif($item->item_per == 4) Half Dozen @endif</small></p></td>
 												<td><p class="mb-0 mt-0 lh-sm text-nowrap"><small class="text-secondary">
 													@foreach($item->categories as $c)
 														{{ $c->pos_category }}<br>
@@ -46,7 +46,7 @@
 												<td class="text-nowrap text-end">
 													<span class="badge fw-normal pos-bg-red">{{ $item->is_visible == 1 ? "Visible" : "Invisible" }}</span>
 										  			<span class="badge fw-normal pos-bg-yellow">{{ $item->is_special_item == 1 ? "Special" : "" }}</span>
-										  			<a href="#"><i class="fas fa-pen color-blue ms-3 me-3" title="Edit this category"></i></a>
+										  			<a href="{{ route('item.edit', $item->id) }}"><i class="fas fa-pen color-blue ms-3 me-3" title="Edit this category"></i></a>
 										  			<a href="#"><i class="fas fa-trash color-red" title="Delete this category"></i></a>
 												</td>
 											</tr>
