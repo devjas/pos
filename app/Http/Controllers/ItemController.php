@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Item;
 use App\Models\ItemsCategory;
 use App\Models\Category;
+use Illuminate\Support\Arr;
 
 class ItemController extends Controller
 {
@@ -121,7 +122,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Item::find($id);
+        $categories = Category::select('id', 'pos_category')->get();
+        return View::make('pos.pages.item.edit', ['categories' => $categories, 'item' => $item]);
     }
 
     /**
@@ -133,7 +136,54 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'item_category' => 'required|not_in:0',
+            'item_name' => 'required|max:30',
+            'item_description' => 'required',
+            'item_price' => 'required', 
+            'item_per' => 'required|not_in:0',
+            'item_tax' => 'not_in:0',
+            'is_visible' => 'required'
+        ], $this->item_rules());
+
+        if($validator->fails()) {
+
+            Session::flash('error', 'Please fix required fields.');
+            return redirect()->back()->withErrors($validator)->withInput();
+
+        }
+
+        $item = Item::find($id);
+
+        $item->update([
+            'item_name' => $request->item_name,
+            'item_description' => $request->item_description,
+            'item_price' => $request->item_price, 
+            'item_per' => $request->item_per,
+            'item_tax' => $request->item_tax,
+            'is_special_item' => $request->special_item,
+            'is_visible' => $request->is_visible
+        ]);
+
+        $item_categories = ItemsCategory::where("item_id", $id)->pluck('category_id');
+
+        foreach($request->item_category as $categories) {
+
+            if(!$item_categories->contains($categories)) {
+                ItemsCategory::insert([
+                    'item_id' => $id,
+                    'category_id' => $categories
+                ]);
+            }
+
+        }
+
+        ItemsCategory::where('item_id', $id)->whereNotIn('category_id', $request->item_category)->delete();
+
+
+        Session::flash('success', 'Item added successfully!');
+        return redirect()->route('item.index');
+
     }
 
     /**
