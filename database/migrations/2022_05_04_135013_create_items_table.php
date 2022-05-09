@@ -18,8 +18,8 @@ class CreateItemsTable extends Migration
             $table->string('item_name');
             $table->text('item_description');
             $table->double('item_price', 8,2);
-            $table->string('item_per', 30);
-            $table->double('item_tax', 8,2);
+            $table->integer('item_per');
+            $table->double('item_tax', 8,4);
             $table->integer('is_special_item');
             $table->integer('is_visible');
             $table->timestamps();
