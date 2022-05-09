@@ -78,10 +78,10 @@
 												<label for="item_per">PER</label>
 												<select name="item_per" class="form-select border-secondary">
 													<option value="0">Choose</option>
-													<option value="each" {{ old('item_per') == "each"  ? "selected" : "" }}>Each</option>
-													<option value="LB" {{ old('item_per') == "LB" ? "selected" : '' }}>LB</option>
-													<option value="dozen" {{ old('item_per') == "dozen" ? "selected" : "" }}>Dozen</option>
-													<option value="half dozen" {{ old('item_per') == "half dozen" ? "selected" : "" }}>Half Dozen</option>
+													<option value="1" {{ old('item_per') == 1  ? "selected" : null }}>Each</option>
+													<option value="2" {{ old('item_per') == 2 ? "selected" : null }}>LB</option>
+													<option value="3" {{ old('item_per') == 3 ? "selected" : null }}>Dozen</option>
+													<option value="4" {{ old('item_per') == 4 ? "selected" : null }}>Half Dozen</option>
 												</select>
 												@if($errors->has('item_per'))
 													<span class="color-red fw-bold">{{ $errors->first('item_per') }}</span>
