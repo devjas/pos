@@ -50,20 +50,15 @@ class ItemsAddonsController extends Controller
                 'addon_price' => $request->addon_price
             ];
 
-             // dd($addons);
-
             foreach($addons as $key => $addon) {
 
                 $item_addon = new ItemsAddon;
 
-                if(!$p->contains($addon)) {
+                if(!$p->contains($addon['addon_id'])) {
 
                     $item_addon->item_id = $request->item_id;
                     $item_addon->addon_id = $addon['addon_id'];
                     $item_addon->addon_price = $addon['addon_price'];
-
-
-                    $item_addon->addon_price = $p;
 
                     $item_addon->save(); 
 
@@ -81,11 +76,6 @@ class ItemsAddonsController extends Controller
             ItemsAddon::where('item_id', $request->item_id)->whereNotIn('addon_id', $request->is_enabled)->delete();
 
         }
-        
-            
-     
-
-       
 
         return redirect()->back();
        
