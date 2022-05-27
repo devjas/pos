@@ -18,9 +18,27 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item ps-0 pe-0"><a href="{{ route('category.index') }}" class="stretched-link">Categories</a></li>
             <li class="list-group-item ps-0 pe-0"><a href="{{ route('item.index') }}" class="stretched-link">Items</a></li>
-            <!-- <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Addons</a></li>
-            <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Extras</a></li>
-            <li class="list-group-item ps-0 pe-0"><a href="#" class="stretched-link">Options</a></li> -->
+            <li class="list-group-item ps-0 pe-0"><a href="{{ route('addon.index') }}" class="stretched-link">Addons</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+   <div class="accordion accordion-flush" id="options">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="collapseOptionsLabel">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOptions" aria-expanded="false" aria-controls="collapseOptions">
+          OPTIONS
+        </button>
+      </h2>
+      <div id="collapseOptions" class="accordion-collapse collapse" aria-labelledby="collapseOptionsLabel" data-bs-parent="#options">
+        <div class="accordion-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item ps-0 pe-0"><a href="{{ route('category.index') }}" class="stretched-link">Wellness</a></li>
           </ul>
         </div>
       </div>
