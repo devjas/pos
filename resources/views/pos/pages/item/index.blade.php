@@ -45,7 +45,14 @@
 													@endforeach
 												</small></p></td>
 												<td>
-													<small class="text-secondary"><a href="{{ route('item-addon.show', $item->id) }}">Addons</a></small>
+													<small class="text-secondary">
+														<a href="{{ route('item-addon.show', $item->id) }}">
+															<span>Addons</span> 
+															<small>																
+																{{ count($item->addons) > 0 ? "[".count($item->addons)."]" : "" }}
+															</small>
+														</a>
+													</small>
 												</td>
 												<td class="text-nowrap text-end"> 
 													<span class="badge fw-normal pos-bg-red">{{ $item->is_visible == 1 ? "Visible" : "Invisible" }}</span>
