@@ -21,8 +21,8 @@ use App\Http\Controllers\TestController;
 */
 
 Route::get('/', [PosPagesController::class, 'getCategories']);
-Route::get('/items/{id}', [PosPagesController::class, 'getItems']);
-Route::get('/addons-extras', [PosPagesController::class, 'getAddonsExtras']);
+Route::get('/items/{category_id}', [PosPagesController::class, 'getItems']);
+Route::get('/addons-extras/{item_id}', [PosPagesController::class, 'getAddonsExtras'])->name('addons.extras');
 
 Route::resources([
 	'category' => CategoryController::class,
