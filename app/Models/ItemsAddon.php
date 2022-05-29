@@ -9,5 +9,5 @@ class ItemsAddon extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['item_id', 'addon_id', 'addon_price'];
+    protected $fillable = ['item_id', 'addon_id', 'addon_price', 'item_price'];
 }
