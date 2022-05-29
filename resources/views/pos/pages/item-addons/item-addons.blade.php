@@ -21,14 +21,14 @@
 					<form action="{{ route('item-addon.store') }}" method="post">
 						@csrf
 						<div class="card card-body border-0 shadow">
-							<input type="text" name="item_id" value="{{ $item->id }}">
+							<input type="hidden" name="item_id" value="{{ $item->id }}">
 							<div class="row">
 								<div class="col-12">
 									<button type="submit" class="btn pos-bg-green text-white btn-md">Update Addons</button> | 
 									<a href="{{ route('item.index') }}" class="btn pos-bg-red text-white btn-md">Exit</a>
 								</div>
 							</div>
-							
+
 							<table class="table hover border-light stripe" id="itemsDataTable">
 								<thead>
 									<tr>
@@ -38,16 +38,17 @@
 									</tr>
 								</thead>
 								<tbody>
-
-@foreach($addons as $counter => $addon)
-	<tr>
-		<td>{{ $addon->id }} {{ $addon->addon_name }}</td>
-		<td>
-			<input type="text" name="addon_price[{{$counter}}]" class="form-control form-control-sm border-secondary text-center" style="width: 55px;" placeholder="$">
-		</td>
-		<td><input type="checkbox" name="addon_id[{{$counter}}]" value="{{ $addon->id }}"></td>
-	</tr>
-@endforeach
+									@foreach($addons as $counter => $addon)
+									
+										<tr>
+											<td>{{ $addon->id }} {{ $addon->addon_name }}</td>
+											<td>
+												<input type="text" name="addon_price[{{$counter}}]" class="form-control form-control-sm border-secondary text-center" style="width: 55px;" placeholder="$" @foreach($ap as $price) @if($price->addon_id == $addon->id) value="{{ $price->addon_price }}"@endif @endforeach>
+											</td>
+											<td><input type="checkbox" name="addon_id[{{$counter}}]" value="{{ $addon->id }}" @foreach($ap as $price) @if($price->addon_id == $addon->id) checked @endif @endforeach></td>
+										</tr>
+								
+									@endforeach
 								</tbody>
 							</table>
 						</div>
