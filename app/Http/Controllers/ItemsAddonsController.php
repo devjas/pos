@@ -41,9 +41,9 @@ class ItemsAddonsController extends Controller
      */
     public function store(Request $request)
     {
-
-        if($request->addon_id) {
         
+        if($request->addon_id) {
+            
             $p = ItemsAddon::where('item_id', $request->item_id)->pluck('addon_id');
 
             $addons = [
@@ -115,9 +115,23 @@ class ItemsAddonsController extends Controller
      */
     public function show($id)
     {
+
         $item = Item::find($id); 
-        $addons = Addon::all();
-        return View::make('pos.pages.item-addons.item-addons', ['item' => $item, 'addons' => $addons]);
+        $addons = Addon::all();     
+
+        $a = $addons->where('id', '>', 0)->pluck('id');
+
+        $ap = ItemsAddon::select('addon_id', 'addon_price')
+        ->where('item_id', $id)
+        // ->whereIn('addon_id', $a)
+        ->get();
+
+        return View::make('pos.pages.item-addons.item-addons', [
+            'item' => $item,
+            'addons' => $addons,
+            'ap' => $ap,
+        ]);
+
     }
 
     /**
