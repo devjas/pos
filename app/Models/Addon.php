@@ -9,5 +9,9 @@ class Addon extends Model
 {
     use HasFactory;
 
+    public function items() {
+        return $this->belongsToMany(Item::class, 'items_addons', 'addon_id', 'item_id');
+    }
+
     protected $fillable = [ 'addon_name' ];
 }
