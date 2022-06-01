@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Item;
 use App\Models\ItemsAddon;
 use App\Models\Addon;
+use Illuminate\Support\Arr;
 
 class ItemsAddonsController extends Controller
 {
@@ -41,44 +42,69 @@ class ItemsAddonsController extends Controller
     public function store(Request $request)
     {
         
-        $p = ItemsAddon::where('item_id',$request->item_id)->pluck('addon_id');
-
-        if($request->is_enabled) {
+        if($request->addon_id) {
+            
+            $p = ItemsAddon::where('item_id', $request->item_id)->pluck('addon_id');
 
             $addons = [
-                'addon_id' => $request->is_enabled, 
-                'addon_price' => $request->addon_price
+                'addon_id' => $request->addon_id,
+                'addon_price' => $request->addon_price,
             ];
 
+            $values = [];
             foreach($addons as $key => $addon) {
+
+                foreach($addon as $subkey => $subvalue) {
+
+                    $values[$subkey][$key] = $subvalue;
+
+                }
+               
+            }
+
+            $values = collect($values)->filter(function($aid) { // Sames as array_filter()
+                return isset($aid['addon_id']);
+            })->toArray();
+
+            foreach($values as $vkey => $value) {
 
                 $item_addon = new ItemsAddon;
 
-                if(!$p->contains($addon['addon_id'])) {
+                if(!$p->contains($value['addon_id'])) {
 
                     $item_addon->item_id = $request->item_id;
-                    $item_addon->addon_id = $addon['addon_id'];
-                    $item_addon->addon_price = $addon['addon_price'];
-
-                    $item_addon->save(); 
+                    $item_addon->addon_id =  $value['addon_id'];
+                    $item_addon->addon_price = $value['addon_price'];
+                 
+                    $item_addon->save();
 
                 } else {
                   
-                    $item_addon->where('item_id', $request->item_id)->update([
-                        'addon_price' => 5,
-                        'is_included' => 2
+                    $item_addon->where(
+                        [
+                            'item_id' => $request->item_id,
+                            'addon_id' => $value['addon_id'],
+                        ]
+                    )->update([
+                        'addon_id' => $value['addon_id'],
+                        'addon_price' => $value['addon_price'],
                     ]);
 
                 }
 
-            }
-        
-            ItemsAddon::where('item_id', $request->item_id)->whereNotIn('addon_id', $request->is_enabled)->delete();
+                ItemsAddon::where('item_id', $request->item_id)->whereNotIn('addon_id', $addons['addon_id'])->delete();
 
+            }
+
+            Session::flash('success', 'Addons saved successfully.');
+
+            return redirect()->route('item-addon.show', $request->item_id);
         }
 
-        return redirect()->back();
-       
+        Session::flash('warning', 'Nothing has been saved. Choose options under Add/Remove.');
+
+        return redirect()->route('item-addon.show', $request->item_id);
+
     }
 
     /**
@@ -89,9 +115,23 @@ class ItemsAddonsController extends Controller
      */
     public function show($id)
     {
+
         $item = Item::find($id); 
-        $addons = Addon::all();
-        return View::make('pos.pages.item-addons.item-addons', ['item' => $item, 'addons' => $addons]);
+        $addons = Addon::all();     
+
+        $a = $addons->where('id', '>', 0)->pluck('id');
+
+        $ap = ItemsAddon::select('addon_id', 'addon_price')
+        ->where('item_id', $id)
+        // ->whereIn('addon_id', $a)
+        ->get();
+
+        return View::make('pos.pages.item-addons.item-addons', [
+            'item' => $item,
+            'addons' => $addons,
+            'ap' => $ap,
+        ]);
+
     }
 
     /**

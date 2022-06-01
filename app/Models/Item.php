@@ -17,6 +17,12 @@ class Item extends Model
         return ucfirst($value);
     }
 
+    public function addons() {
+        return $this->belongsToMany(Addon::class, 'items_addons', 'item_id')
+        ->withPivot('addon_price')
+        ->withTimestamps();
+    }
+
     protected $fillable = [
         'item_name',
         'item_description',

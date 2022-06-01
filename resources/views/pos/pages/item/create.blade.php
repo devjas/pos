@@ -21,7 +21,7 @@
 						<div class="card rounded-0 border-0 shadow p-3">
 							<div class="card-header bg-white">
 								<div class="row">
-									<div class="col-12">
+									<div class="col-12 align-self-end">
 										<button type="submit" class="btn btn-md pos-bg-green text-white">Add Item</button> | 
 										<a href="{{ route('item.index') }}" class="btn btn-md pos-bg-red text-white">Exit</a>
 									</div>
@@ -150,6 +150,8 @@
 						<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('item.index') }}" class="">My Items</a></li>
 					  	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('category.index') }}" class="">My Categories</a></li>
 					  	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('category.create') }}" class="">Add New Category</a></li>
+					  	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.create') }}" class="">Create New Addon</a></li>
+					  <li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.index') }}" class="">My Addons</a></li>
 					</ul>
 				</div>
 			</div>

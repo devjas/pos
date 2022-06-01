@@ -10,9 +10,9 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="row justify-content-between">
-						<div class="col-auto align-self-center"><h4 class="mb-0">My Categories</h4></div>
+						<div class="col-auto align-self-center"><h4 class="mb-0">My Addons</h4></div>
 							<div class="col-auto align-self-center">
-								<a href="{{ route('category.create') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-plus"></i> Add New Category</a>
+								<a href="{{ route('addon.create') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-plus"></i> Create New Addon</a>
 						</div>
 					</div>
 					<hr class="mt-1">
@@ -26,19 +26,20 @@
 								<thead>
 									<tr>
 										<th class="pb-0">Name</th>
-										<th class="pb-0 text-end">Status</th>
+										<th class="pb-0 text-end">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($categories as $category)
+									@foreach($addons as $addon)
 										<tr>
-											<td><a href="{{ route('category.edit', $category->id) }}">{{ $category->pos_category }}</a></td>
+											<td><a href="{{ route('addon.edit', $addon->id) }}">{{ $addon->addon_name }}</a></td>
 											<td class="text-end">
-												<span class="badge fw-normal pos-bg-{{ $category->is_visible == 1 ? "green" : "red" }}">
-									  				{{ $category->is_visible == 1 ? "Visible" : "Invisible" }}
-									  			</span>
-									  			<a href="{{ route('category.edit', $category->id) }}"><i class="fas fa-pen color-blue ms-3 me-3" title="Edit this category"></i></a>
-									  			<a href="#"><i class="fas fa-trash color-red" title="Delete this category"></i></a>
+									  			<a href="{{ route('addon.edit', $addon->id) }}"><i class="fas fa-pen color-blue ms-3 me-3" title="Edit this category"></i></a>
+									  			<a href="{{ route('addon.destroy', $addon->id) }}" id="{{ $addon->id }}" onclick="event.preventDefault(); console.log(this.nextElementSibling.submit());"><i class="fas fa-trash color-red" title="Delete this category"></i></a>
+									  			<form action="{{ route('addon.destroy', $addon->id) }}" method="post" id="deleteAddon">
+									  				@csrf
+									  				@method('DELETE')
+									  			</form>
 											</td>
 										</tr>
 									@endforeach
@@ -55,11 +56,11 @@
 					<p class="fw-bold mb-0">Quick Links:</p>
 					<hr class="mb-2 mt-1 pos-bg-light">
 					<ul class="list-group list-group-flush">
+						<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.create') }}" class="">Create New Addon</a></li>
+						<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('category.index') }}" class="">My Categories</a></li>
 						<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('category.create') }}" class="">Add New Category</a></li>
 					  	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('item.index') }}" class="">My Items</a></li>
 					  	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('item.create') }}" class="">Add New Item</a></li>
-					  	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.create') }}" class="">Create New Addon</a></li>
-					  <li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.index') }}" class="">My Addons</a></li>
 					</ul>
 				</div>
 			</div>

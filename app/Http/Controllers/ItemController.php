@@ -76,9 +76,9 @@ class ItemController extends Controller
 
             Session::flash('error', 'Please fix required fields.');
             return redirect()->back()->withErrors($validator)->withInput();
-
+            
         }
-
+        
         $item = new Item;
         $item->item_name = $request->item_name;
         $item->item_description = $request->item_description;
@@ -87,9 +87,9 @@ class ItemController extends Controller
         $item->item_tax = $request->item_tax;
         $item->is_special_item = $request->special_item;
         $item->is_visible = $request->is_visible;
-
+        
         $item->save();
-
+        
         $selected_category = collect($request->item_category);
         foreach($selected_category as $categories) {
             ItemsCategory::insert([
@@ -97,7 +97,7 @@ class ItemController extends Controller
                 'category_id' => $categories
             ]);
         }
-
+        
         Session::flash('success', 'Item added successfully!');
         return redirect()->route('item.index');
         

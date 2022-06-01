@@ -10,8 +10,8 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="row justify-content-between">
-							<div class="col-auto align-self-center"><h4 class="mb-0">My Items</h4></div>
-							<div class="col-auto align-self-center">
+							<div class="col-auto"><h4 class="mb-0">My Items</h4></div>
+							<div class="col-auto">
 								<a href="{{ route('item.create') }}" class="btn pos-bg-green btn-sm text-white"><i class="fas fa-plus"></i> Add New Item</a>
 							</div>
 						</div>
@@ -28,6 +28,7 @@
 											<th class="pb-0">Name</th>
 											<th class="pb-0">Price</th>
 											<th class="pb-0">Category</th>
+											<th class="pb-0">Addons</th>
 											<th class="pb-0 text-end">Status</th>
 										</tr>
 									</thead>
@@ -43,7 +44,17 @@
 														{{ $c->pos_category }}<br>
 													@endforeach
 												</small></p></td>
-												<td class="text-nowrap text-end">
+												<td>
+													<small class="text-secondary">
+														<a href="{{ route('item-addon.show', $item->id) }}">
+															<span>Addons</span> 
+															<small>																
+																{{ count($item->addons) > 0 ? "[".count($item->addons)."]" : "" }}
+															</small>
+														</a>
+													</small>
+												</td>
+												<td class="text-nowrap text-end"> 
 													<span class="badge fw-normal pos-bg-red">{{ $item->is_visible == 1 ? "Visible" : "Invisible" }}</span>
 										  			<span class="badge fw-normal pos-bg-yellow">{{ $item->is_special_item == 1 ? "Special" : "" }}</span>
 										  			<a href="{{ route('item.edit', $item->id) }}"><i class="fas fa-pen color-blue ms-3 me-3" title="Edit this category"></i></a>
@@ -67,6 +78,8 @@
 							<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('item.create') }}" class="">Add New Item</a></li>
 						 	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('category.index') }}" class="">My Categories</a></li>
 						 	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('category.create') }}" class="">Add New Categories</a></li>
+						 	<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.create') }}" class="">Create New Addon</a></li>
+					  		<li class="list-group-item ps-0 pe-0 border-bottom-0 pb-0 pt-0 bg-transparent"><a href="{{ route('addon.index') }}" class="">My Addons</a></li>
 						</ul>
 					</div>
 				</div>
