@@ -34,7 +34,32 @@ class PosOrderingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // return session()->flush();
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$request->item_id])) {
+
+            $cart[$request->item_id]['qty']++;
+
+        } else {
+
+            $cart[$request->item_id] = [
+
+                'id' => $request->item_id,
+                'category_id' => $request->category_id,
+                'price' => $request->item_price,
+                'item_name' => $request->item_name,
+                'qty' => 1,
+
+            ];
+
+
+        }
+
+        session()->put('cart', $cart);
+
+        return redirect()->route('addons.extras', $request->item_id);
     }
 
     /**
@@ -78,7 +103,21 @@ class PosOrderingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+
+        if($id) {
+
+            $cart = session()->get('cart');
+            if(isset($cart[$id])) {
+
+                unset($cart[$id]);
+
+            }
+
+        }
+        
+        session()->put('cart', $cart);
+        return redirect('/');
+        
     }
 }
