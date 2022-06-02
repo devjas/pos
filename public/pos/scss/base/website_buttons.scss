@@ -3,6 +3,11 @@
     grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
     gap: 1.25rem;
     text-align: center;
+    & #posBtns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
     &.addons-extras {
         .pos-btn-block {
             position: relative;
