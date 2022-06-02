@@ -17,7 +17,7 @@
 			}
 		}
 		input[type="radio"] {
-			@extend input[type="checkbox"];
+			@extend input, [type="checkbox"];
 		}
 		.check-btn-span {
 			display: block;

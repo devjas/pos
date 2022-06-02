@@ -5,12 +5,19 @@
 <div class="container-fluid pt-2 pb-3">
 	<div class="row">
 		<div class="col-7">
-			<div class="row ">
-				<div class="col-12">
+			<div class="row justify-content-between">
+				<div class="col-auto">
 					<h4 class="mb-0">{{ $item->item_name }} | 
 					<small>${{ number_format($item->item_price, 2) }}</small><small class="fw-normal">/
 					@if($item->item_per == 1) Each @elseif($item->item_per == 2) LB @elseif($item->item_per == 3) Dozen @elseif($item->item_per == 4) Half Dozen @endif</small></h4>
 					<p class="mb-0 text-secondary">{{ $item->item_description }}</p>
+				</div>
+				<div class="col-auto align-self-center">
+					<form action="{{ route('order.destroy', $item->id) }}" method="post">
+						@csrf
+						@method('DELETE')
+						<button type="submit" class="btn pos-bg-red btn-sm text-white"><i class="fas fa-trash"></i> Remove</button>
+					</form>
 				</div>
 			</div>
 			<hr class="mt-0">	

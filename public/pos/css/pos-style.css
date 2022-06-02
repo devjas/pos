@@ -133,6 +133,10 @@ body, html {
   grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
   gap: 1.25rem;
   text-align: center; }
+  .btn-block-container #posBtns {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
   .btn-block-container.addons-extras .pos-btn-block {
     position: relative;
     height: auto; }
@@ -188,7 +192,7 @@ body, html {
       top: .25rem;
       left: .25rem;
       z-index: -1; }
-      .btn-block-container .pos-btn-block input[type="checkbox"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block .check-btn label input[type="radio"]:checked + .pos-btn-checkbox, .check-btn label .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox {
+      .btn-block-container .pos-btn-block input[type="checkbox"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block .check-btn label input[type="radio"]:checked + .pos-btn-checkbox, .check-btn label .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block input[type="radio"]:checked + .pos-btn-checkbox, .btn-block-container .pos-btn-block .check-btn label input[type="radio"]:checked + .pos-btn-checkbox {
         background-color: #0f8df2;
         color: #ffffff; }
 

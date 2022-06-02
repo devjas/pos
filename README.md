@@ -6,12 +6,10 @@ This POS system is in developement. Instructions will be updated accordingly.
 
 ### Current Instructions
 
-At this point a testing database is required to run this application.
+A testing database is required to run this application.
 
 1. Rename <code>.env.example</code> file to <code>.env</code> and provide your database credentials.
 2. Run <code>php artisan key:generate</code> command to create app key.
 3. Create a testing database and provide the same database name inside of a <code>.env</code> file.
 4. Run <code>php artisan migrate</code> command to create required tables.
 5. Finally create some categories and items.
-
-<b>Orders can not be created at the moment.</b>
