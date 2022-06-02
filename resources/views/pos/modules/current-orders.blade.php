@@ -9,7 +9,7 @@
 	</div>
 	<div class="card card-body h-100 rounded-0 p-0">
 		<div class="row orders-row">
-			<div class="col-12 pe-0">
+			<div class="col-12">
 				<table class="table mb-0">
 					<thead class="sticky-top">
 						<tr class="pos-bg-dark">
@@ -20,17 +20,26 @@
 						</tr>
 					</thead>
 					<tbody class="border-top-0 pb-5">
-						<tr class="bg-white">
-							<td class="pt-3 pb-3">
-								<div class="">
-									<p class="mb-0 lh-sm">Cheese Burger</p>
-									<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
-								</div>
-							</td>
-							<td class="text-center"><p class="mb-0">1</p></td>
-							<td class="text-end"><p class="mb-0">$5.99</p></td>
-							<td class="text-end"><p class="mb-0">$5.99</p></td>
-						</tr>
+						@if(Session::has('cart') && count(Session::get('cart')) !== 0)
+							@foreach(session('cart') as $id => $cart_items)
+								<tr class="bg-white position-relative">
+									<td class="pt-3 pb-3">
+										<a href="{{ route('addons.extras', $cart_items['id']) }}" class="stretched-link"></a>
+										<div class="">
+											<p class="mb-0 lh-sm">{{ $cart_items['id'] }} | {{ $cart_items['item_name'] }}</p>
+											<p class="mb-0 lh-sm"><small class="text-secondary blockquote-footer">Tomato, Onions, Cheese</small></p>
+										</div>
+									</td>
+									<td class="text-center"><p class="mb-0">{{ $cart_items['qty'] }}</p></td>
+									<td class="text-end"><p class="mb-0">${{ number_format($cart_items['price'], 2) }}</p></td>
+									<td class="text-end"><p class="mb-0">${{ number_format($cart_items['price'] * $cart_items['qty'], 2) }}</p></td>
+								</tr>
+							@endforeach
+						@else
+							<tr class="bg-white">
+								<td class="pt-3 pb-3 border-0" colspan="4"><h3 class="mb-0 text-secondary">Nothing Added</h3></td>
+							</tr>
+						@endif
 					</tbody>
 				</table>
 			</div>
