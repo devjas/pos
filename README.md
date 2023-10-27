@@ -1,6 +1,6 @@
 ## POS System in Laravel 9
 
-This POS system is in developement. Instructions will be updated accordingly.
+This POS system is still in developement. Some features may not function properly. Instructions will be updated accordingly.
 
 <i>Vendor directory is not included in this project. If you would like to preview this project in a browser you will need a vendor directory and follow installation instructions. First clone this project.</i>
 
